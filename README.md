@@ -25,7 +25,11 @@ user: admin@gmail.com
 pass: password
 
 ## Authors and acknowledgment
-Muhammad Alvin @muhalvin
+<div id="badges">
+  <a href="https://github.com/muhalvin">
+    <img src="https://img.shields.io/badge/Github?style=for-the-badge&logo=github&logoColor=white" alt="Github Badge"/>
+  </a>
+</div>
 
 ## Project status
 - Ongoing
