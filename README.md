@@ -20,8 +20,9 @@ Laravel Starter with Sneat Admin Dashboard.
 - php artisan storage:link
 
 ## Auth
-email: admin@gmail.com
-passw: password
+user: admin@gmail.com
+
+pass: password
 
 ## Authors and acknowledgment
 Muhammad Alvin @muhalvin
