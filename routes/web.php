@@ -23,7 +23,7 @@ Route::middleware('guest')->group(function () {
 // Landing Page
 Route::get('/', function () {
     return view('contents.frontend.welcome');
-});
+})->name('/');
 
 
 // Member
@@ -38,10 +38,11 @@ Route::group(['prefix' => 'member', 'middleware' => ['auth', 'verified', 'role:M
 
 
 
-
 // Admin
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'verified', 'role:Administrator'], 'as' => 'admin.'], function () {
     Route::get('home', [\App\Http\Controllers\Admin\Home\HomeController::class, 'index'])->name('home');
+
+    Route::get('users', [\App\Http\Controllers\Admin\User\UserController::class, 'index'])->name('users');
 });
 
 require __DIR__ . '/auth.php';

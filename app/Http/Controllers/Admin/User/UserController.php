@@ -1,28 +1,23 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Home;
+namespace App\Http\Controllers\Admin\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Cache;
 
-class HomeController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): View
     {
-        $admin = Cache::remember('admin:admin-role-count', 7200, function () {
-            return User::role('Administrator')->count();
-        });
+        $admin =  User::role('Administrator')->paginate(10, ['*'], 'admin_page');
+        $member = User::role('Member')->withTrashed()->paginate(10, ['*'], 'member_page');
 
-        $users = Cache::remember('admin:user-role-count', 7200, function () {
-            return User::role('Member')->count();
-        });
-
-        return view('contents.backend.admin.home.main', compact('admin', 'users'));
+        return view('contents.backend.admin.user.main', compact('admin', 'member'));
     }
 
     /**

@@ -1,6 +1,7 @@
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
     <div class="app-brand demo">
-        <a href="{{ route('login') }}" class="app-brand-link">
+
+        <a href="{{ route('/') }}" class="app-brand-link">
             <span class="app-brand-logo demo">
                 {{-- Logo Here --}}
             </span>
@@ -19,30 +20,25 @@
         {{-- Admin --}}
         @role('Administrator')
             <li class="menu-item {{ request()->is('admin/home') ? 'active' : '' }}">
-                <a href="#" class="menu-link">
+                <a href="{{ route('admin.home') }}" class="menu-link">
                     <i class="menu-icon tf-icons bx bx-home-circle"></i>
                     <div data-i18n="Home">Home</div>
                 </a>
             </li>
 
             <li class="menu-header small text-uppercase">
-                <span class="menu-header-text">Apps &amp; Pages</span>
+                <span class="menu-header-text">User Management</span>
             </li>
-            <li class="menu-item">
+            <li class="menu-item {{ request()->is('admin/users') ? 'open' : '' }}">
                 <a href="javascript:void(0);" class="menu-link menu-toggle">
                     <i class="menu-icon tf-icons bx bx-layout"></i>
-                    <div data-i18n="Layouts">Layouts</div>
+                    <div data-i18n="User management">User Management</div>
                 </a>
 
                 <ul class="menu-sub">
-                    <li class="menu-item">
-                        <a href="#" class="menu-link">
-                            <div data-i18n="Without menu">Without menu</div>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="#" class="menu-link">
-                            <div data-i18n="Without navbar">Without navbar</div>
+                    <li class="menu-item {{ request()->is('admin/users') ? 'active' : '' }}">
+                        <a href="{{ route('admin.users') }}" class="menu-link">
+                            <div data-i18n="user lists">user lists</div>
                         </a>
                     </li>
                 </ul>
