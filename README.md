@@ -20,16 +20,8 @@ Laravel Starter with Sneat Admin Dashboard.
 - php artisan storage:link
 
 ## Auth
-user: admin@gmail.com
-
-pass: password
-
-## Authors and acknowledgment
-<div id="badges">
-  <a href="https://github.com/muhalvin">
-    <img src="https://img.shields.io/badge/Github?style=for-the-badge&logo=github&logoColor=white" alt="Github Badge"/>
-  </a>
-</div>
+- user: admin@gmail.com
+- pass: password
 
 ## Project status
 - Ongoing
