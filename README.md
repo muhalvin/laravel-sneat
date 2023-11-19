@@ -19,8 +19,12 @@ Laravel Starter with Sneat Admin Dashboard.
 - php artisan key:generate
 - php artisan storage:link
 
+## Auth
+email: admin@gmail.com
+passw: password
+
 ## Authors and acknowledgment
-Muhammad Alvin
+Muhammad Alvin @muhalvin
 
 ## Project status
-Ongoing
+- Ongoing
