@@ -30,12 +30,16 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerate();
 
         if (auth()->user()->hasRole('Administrator')) {
-            return redirect()->route('admin.home')->with('success', 'Anda Berhasil Login!');
+            toastr()->closeButton(true)->addSuccess('Successfully login.');
+            return redirect()->route('admin.home');
         }
 
         if (auth()->user()->hasRole('Member')) {
-            return redirect()->intended(RouteServiceProvider::HOME)->with('success', 'Anda berhasil login!');
+            toastr()->closeButton(true)->addSuccess('Successfully login.');
+            return redirect()->intended(RouteServiceProvider::HOME);
         }
+
+        return redirect()->route('404');
     }
 
     /**

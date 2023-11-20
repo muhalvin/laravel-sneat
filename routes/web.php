@@ -25,15 +25,19 @@ Route::get('/', function () {
     return view('contents.frontend.welcome');
 })->name('/');
 
+// Redirect
+Route::get('404', function () {
+   return view('errors.404');
+});
+Route::get('503', function () {
+   return view('errors.503');
+});
+
 
 // Member
 Route::group(['prefix' => 'member', 'middleware' => ['auth', 'verified', 'role:Member'], 'as' => 'member.'], function () {
     Route::get('home', [\App\Http\Controllers\Member\Home\HomeController::class, 'index'])->name('home');
 });
-
-
-
-
 
 
 

@@ -11,6 +11,7 @@ Laravel Starter with Sneat Admin Dashboard.
 - Breeze
 - Spatie
 - Socialite
+- Php-Flasher
 
 ## Installation
 

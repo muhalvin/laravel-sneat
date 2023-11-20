@@ -31,8 +31,10 @@ class GoogleAuthController extends Controller
 
                 Auth::login($current_user);
 
-                return redirect()->route('member.home')->with('success', 'Anda berhasil login!');
-            } else {
+                toastr()->closeButton(true)->addSuccess('Successfully login.');
+                return redirect()->route('member.home');
+
+                } else {
 
                 $newUser = User::updateOrCreate(['email' => $user->email], [
                     'name'      => $user->name,
@@ -45,7 +47,8 @@ class GoogleAuthController extends Controller
 
                 Auth::login($newUser);
 
-                return redirect()->route('member.home')->with('success', 'Anda berhasil login!');
+                toastr()->closeButton(true)->addSuccess('Successfully login.');
+                return redirect()->route('member.home');
             }
         } catch (Exception $e) {
             return redirect()->route('login')->with('error', $e->getMessage());
