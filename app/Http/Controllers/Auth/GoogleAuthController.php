@@ -22,13 +22,9 @@ class GoogleAuthController extends Controller
         try {
             $user = Socialite::driver('google')->user();
 
-            $current_user = User::withTrashed()->where('gauth', $user->id)->first();
+            $current_user = User::where('gauth', $user->id)->first();
 
             if ($current_user) {
-                if ($current_user->trashed()) {
-                    $current_user->restore();
-                }
-
                 Auth::login($current_user);
 
                 toastr()->closeButton(true)->addSuccess('Successfully login.');
