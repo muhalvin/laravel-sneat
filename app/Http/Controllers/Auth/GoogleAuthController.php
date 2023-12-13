@@ -29,8 +29,7 @@ class GoogleAuthController extends Controller
 
                 toastr()->closeButton(true)->addSuccess('Successfully login.');
                 return redirect()->route('member.home');
-
-                } else {
+            } else {
 
                 $newUser = User::updateOrCreate(['email' => $user->email], [
                     'name'      => $user->name,
@@ -47,7 +46,8 @@ class GoogleAuthController extends Controller
                 return redirect()->route('member.home');
             }
         } catch (Exception $e) {
-            return redirect()->route('login')->with('error', $e->getMessage());
+            toastr()->closeButton(true)->addWarning('Something went wrong!');
+            return redirect()->route('login');
         }
     }
 }

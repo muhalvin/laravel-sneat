@@ -30,18 +30,13 @@
 
     {{-- Vendor CSS --}}
     <link rel="stylesheet" href="{{ asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
-    @stack('vendor-css')
 
     {{-- Page CSS --}}
     <link rel="stylesheet" href="{{ asset('assets/vendor/css/pages/page-auth.css') }}" />
-    @stack('page-css')
+    @stack('css')
 
     {{-- Helpers --}}
     <script src="{{ asset('assets/vendor/js/helpers.js') }}"></script>
-
-    {{-- Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section --}}
-
-    {{-- Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file. --}}
     <script src="{{ asset('assets/js/config.js') }}"></script>
 
 </head>
@@ -62,17 +57,14 @@
     <script src="{{ asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
     <script src="{{ asset('assets/vendor/js/menu.js') }}"></script>
 
-    {{-- Vendor JS --}}
-    @stack('vendor-js')
-
     {{-- Main JS --}}
     <script src="{{ asset('assets/js/main.js') }}"></script>
 
     {{-- Page JS --}}
-    @stack('page-js')
+    @stack('js')
 
     <!-- Place this tag in your head or just before your close body tag. -->
-    <script async defer src="{{ asset('assets/vendor/js/github.js') }}"></script>
+    <script async defer src="{{ asset('assets/vendor/libs/github/github.min.js') }}"></script>
 </body>
 
 </html>
