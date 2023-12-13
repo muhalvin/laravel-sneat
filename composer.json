@@ -13,7 +13,8 @@
         "laravel/socialite": "^5.10",
         "laravel/tinker": "^2.8",
         "php-flasher/flasher-toastr-laravel": "^1.15",
-        "spatie/laravel-permission": "^6.1"
+        "spatie/laravel-permission": "^6.1",
+        "yajra/laravel-datatables": "^10.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.9",

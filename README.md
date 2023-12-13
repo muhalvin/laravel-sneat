@@ -1,6 +1,6 @@
 ## Laravel Sneat
 
-Laravel Starter with Sneat Admin Dashboard.
+Laravel Starter with Sneat Admin Dashboard and some packages such as auth, permission and users management.
 
 ## Requirements
 - Laravel (10.37.1)
@@ -12,6 +12,7 @@ Laravel Starter with Sneat Admin Dashboard.
 - Spatie
 - Socialite
 - Php-Flasher
+- Yajra Datatables
 
 ## Installation
 
