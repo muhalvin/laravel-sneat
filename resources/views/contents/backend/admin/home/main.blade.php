@@ -7,14 +7,14 @@
         <div class="layout-container">
 
             {{-- Menu --}}
-            @include('components.menu')
+            @include('partials.menu')
             {{-- !Menu --}}
 
             <!-- Layout container -->
             <div class="layout-page">
 
                 {{-- Navbar --}}
-                @include('components.navbar')
+                @include('partials.navbar')
                 {{-- !Navbar --}}
 
                 {{-- Content Wrapper --}}
@@ -29,7 +29,7 @@
                     {{-- !Content --}}
 
                     {{-- Footer --}}
-                    @include('components.footer')
+                    @include('partials.footer')
                     {{-- !Footer --}}
 
                     <div class="content-backdrop fade"></div>

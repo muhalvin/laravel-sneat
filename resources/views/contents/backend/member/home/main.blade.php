@@ -7,14 +7,14 @@
         <div class="layout-container">
 
             {{-- Menu --}}
-            @include('components.menu')
+            @include('partials.menu')
             {{-- !Menu --}}
 
             <!-- Layout container -->
             <div class="layout-page">
 
                 {{-- Navbar --}}
-                @include('components.navbar')
+                @include('partials.navbar')
                 {{-- !Navbar --}}
 
                 {{-- Content Wrapper --}}
@@ -28,18 +28,22 @@
                                     <div class="d-flex align-items-end row">
                                         <div class="col-sm-7">
                                             <div class="card-body" style="min-height: 28vh;">
-                                                <h5 class="card-title text-primary">Welcome Back, {{ Auth::user()->name }}!</h5>
+                                                <h5 class="card-title text-primary">Welcome
+                                                    Back, {{ Auth::user()->name }}!</h5>
                                                 <p class="mb-3">
                                                     Good day, What we'll do now? How about checking our users list?
                                                 </p>
 
-                                                <a href="javascript:;" class="btn btn-sm btn-outline-primary">View Users</a>
+                                                <a href="javascript:;" class="btn btn-sm btn-outline-primary">View
+                                                    Users</a>
                                             </div>
                                         </div>
                                         <div class="col-sm-5 text-center text-sm-left">
                                             <div class="card-body pb-0 px-0 px-md-4">
-                                                <img src="{{ asset('assets/img/illustrations/man-with-laptop-light.png') }}" height="140" alt="View Badge User"
-                                                    data-app-dark-img="illustrations/man-with-laptop-dark.png" data-app-light-img="illustrations/man-with-laptop-light.png" />
+                                                <img src="{{ asset('assets/img/illustrations/man-with-laptop-light.png') }}"
+                                                     height="140" alt="View Badge User"
+                                                     data-app-dark-img="illustrations/man-with-laptop-dark.png"
+                                                     data-app-light-img="illustrations/man-with-laptop-light.png"/>
                                             </div>
                                         </div>
                                     </div>
@@ -50,7 +54,7 @@
                     {{-- !Content --}}
 
                     {{-- Footer --}}
-                    @include('components.footer')
+                    @include('partials.footer')
                     {{-- !Footer --}}
 
                     <div class="content-backdrop fade"></div>
