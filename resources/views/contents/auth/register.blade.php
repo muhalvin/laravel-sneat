@@ -5,7 +5,7 @@
     <div class="card">
         <div class="card-body">
             <!-- Logo -->
-            @include('auth.partials.logo')
+            @include('contents.auth.partials.logo')
             <!-- /Logo -->
             <h4 class="mb-2">Create Your account?</h4>
             <p class="mb-4"></p>

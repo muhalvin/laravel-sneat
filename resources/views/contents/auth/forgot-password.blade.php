@@ -4,7 +4,7 @@
     <div class="card">
         <div class="card-body">
             <!-- Logo -->
-            @include('auth.partials.logo')
+            @include('contents.auth.partials.logo')
             <!-- /Logo -->
 
             <h4 class="mb-2">Forgot Password? 🔒</h4>

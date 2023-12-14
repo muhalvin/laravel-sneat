@@ -18,6 +18,7 @@ Laravel Starter with Sneat Admin Dashboard and some packages such as auth, permi
 
 - composer install
 - npm install
+- npm run dev or npm run build
 - cp .env.example .env
 - php artisan key:generate
 - php artisan storage:link
