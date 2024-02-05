@@ -50,6 +50,11 @@ If you want to check the original template in HTML5 and Bootstrap, [click here](
     php artisan serve
     ```
 
+7. Auth
+
+    username: admin@gmail.com
+    password: password
+
 ## Requirements
 - Laravel (10.43.0)
 - PHP (8.2.10)
