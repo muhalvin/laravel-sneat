@@ -1,6 +1,9 @@
+![Home-—-Laravel-Sneat](https://github.com/muhalvin/laravel-sneat/assets/97495721/e80e741b-6f75-4bbe-aee1-cd8da104cfdb)
+![Users-—-Laravel-Sneat](https://github.com/muhalvin/laravel-sneat/assets/97495721/49044e12-294e-4403-b1c9-fd35f5ed2f69)
+
 <h1 align="center">Laravel + Sneat</h1>
 
-<p align="center">
+<p>
 Laravel Starter with Sneat Admin Dashboard and some packages such as auth, permission and users management.
 </p>
 
