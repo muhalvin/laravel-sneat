@@ -53,6 +53,7 @@ If you want to check the original template in HTML5 and Bootstrap, [click here](
 7. Auth
 
     username: admin@gmail.com
+    
     password: password
 
 ## Requirements
