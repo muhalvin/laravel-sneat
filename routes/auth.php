@@ -11,6 +11,12 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 
+// Login With Google
+Route::middleware('guest')->group(function () {
+    Route::get('social/google', [\App\Http\Controllers\Auth\GoogleAuthController::class, 'index'])->name('auth.google');
+    Route::get('social/google/callback', [\App\Http\Controllers\Auth\GoogleAuthController::class, 'callback']);
+});
+
 Route::middleware('guest')->group(function () {
     Route::get('register', [RegisteredUserController::class, 'create'])
         ->name('register');

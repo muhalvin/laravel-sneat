@@ -17,7 +17,7 @@ class AuthenticatedSessionController extends Controller
      */
     public function create(): View
     {
-        return view('contents.auth.login');
+        return view('auth.login');
     }
 
     /**
@@ -29,17 +29,8 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        if (auth()->user()->hasRole('Administrator')) {
-            toastr()->closeButton(true)->addSuccess('Successfully login.');
-            return redirect()->route('admin.home');
-        }
-
-        if (auth()->user()->hasRole('Member')) {
-            toastr()->closeButton(true)->addSuccess('Successfully login.');
-            return redirect()->intended(RouteServiceProvider::HOME);
-        }
-
-        return redirect()->route('404');
+        toastr()->closeButton(true)->addSuccess('Successfully login.');
+        return redirect()->intended(RouteServiceProvider::HOME);
     }
 
     /**

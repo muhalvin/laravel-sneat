@@ -60,9 +60,10 @@ If you want to check the original template in HTML5 and Bootstrap, [click here](
     password: password
 
 ## Requirements
-- Laravel (10.43.0)
+- Laravel (10.48.7)
 - PHP (8.2.10)
 - MySQL (8.0.30)
+- Composer (2.7.1)
 
 ## Packages
 - Breeze

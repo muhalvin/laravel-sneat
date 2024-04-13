@@ -5,7 +5,7 @@
     <div class="card">
         <div class="card-body">
             <!-- Logo -->
-            @include('contents.auth.partials.logo')
+            @include('auth.partials.logo')
             <!-- /Logo -->
             <h4 class="mb-2">Create Your account?</h4>
             <p class="mb-4"></p>
@@ -29,7 +29,7 @@
                     <div class="input-group input-group-merge">
                         <input type="password" id="password" class="form-control" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
                             aria-describedby="password" />
-                        <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                        <span class="cursor-pointer input-group-text"><i class="bx bx-hide"></i></span>
                     </div>
                     <x-input-error :messages="$errors->get('password')" class="mt-2" />
                 </div>
@@ -41,7 +41,7 @@
                     <div class="input-group input-group-merge">
                         <input type="password" id="password_confirmation" class="form-control" name="password_confirmation"
                             placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password_confirmation" required />
-                        <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                        <span class="cursor-pointer input-group-text"><i class="bx bx-hide"></i></span>
                     </div>
                     <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
                 </div>
@@ -62,8 +62,7 @@
                 <div class="row">
                     <div class="col-md">
                         <a class="btn btn-outline-dark w-100 strom-bg" href="{{ route('auth.google') }}">
-                            <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in"
-                                src="{{ asset('assets/img/icons/google-96.png') }}" />
+                            <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in" src="{{ asset('assets/img/icons/google-96.png') }}" />
                             Signup with Google
                         </a>
                     </div>

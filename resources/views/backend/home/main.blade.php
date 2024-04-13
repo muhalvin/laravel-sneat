@@ -23,7 +23,7 @@
                     {{-- Content --}}
                     <div class="container-xxl flex-grow-1 container-p-y">
                         <div class="row">
-                            @include('contents.backend.admin.home.partials.card-user')
+                            @include('backend.home.partials.card-user')
                         </div>
                     </div>
                     {{-- !Content --}}
