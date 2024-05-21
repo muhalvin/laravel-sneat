@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="light-style layout-menu-fixed layout-compact" dir="ltr" data-theme="theme-default" data-assets-path="{{ asset('assets/') }}"
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="light-style layout-menu-fixed layout-compact" dir="ltr" data-theme="theme-default" data-assets-path="{{ asset('assets') }}/"
     data-template="vertical-menu-template-free">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
-    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>@yield('title') &mdash; {{ config('app.name', 'Laravel') }}</title>
 
-    <meta name="description" content="" />
+    <meta name="description" content="Most Powerful &amp; Comprehensive Bootstrap 5 Admin Dashboard built for developers!" />
+    <meta name="keywords" content="dashboard, bootstrap 5 dashboard, bootstrap 5 design, bootstrap 5">
 
     {{-- Favicon --}}
     <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon/favicon.ico') }}" />
@@ -42,7 +42,42 @@
 
 <body>
 
-    @yield('app-content')
+    <div class="layout-wrapper layout-content-navbar">
+        <div class="layout-container">
+
+            {{-- Menu --}}
+            @include('partials.menu')
+            {{-- !Menu --}}
+
+            <!-- Layout container -->
+            <div class="layout-page">
+
+                {{-- Navbar --}}
+                @include('partials.navbar')
+                {{-- !Navbar --}}
+
+                {{-- Content Wrapper --}}
+                <div class="content-wrapper">
+
+                    {{-- Content --}}
+                    @yield('content')
+                    {{-- !Content --}}
+
+                    {{-- Footer --}}
+                    @include('partials.footer')
+                    {{-- !Footer --}}
+
+                    <div class="content-backdrop fade"></div>
+                </div>
+                {{-- !Content Wrapper --}}
+
+            </div>
+            <!-- / Layout page -->
+        </div>
+
+        <!-- Overlay -->
+        <div class="layout-overlay layout-menu-toggle"></div>
+    </div>
 
     {{-- Core JS --}}
     <script src="{{ asset('assets/vendor/libs/jquery/jquery.js') }}"></script>

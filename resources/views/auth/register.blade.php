@@ -14,8 +14,14 @@
                 @csrf
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
-                    <input type="text" class="form-control" id="email" name="email" :value="old('email')" placeholder="Enter your email" autofocus />
+                    <input type="email" class="form-control" id="email" name="email" :value="old('email')" placeholder="Enter your email" autofocus />
                     <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" name="username" :value="old('username')" placeholder="Enter your username" />
+                    <x-input-error :messages="$errors->get('username')" class="mt-2" />
                 </div>
 
                 <div class="mb-3">

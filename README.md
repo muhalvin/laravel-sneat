@@ -4,7 +4,7 @@
 <h1 align="center">Laravel + Sneat</h1>
 
 <p>
-Laravel Starter with Sneat Admin Dashboard and some packages such as auth, permission and users management.
+Laravel 10 Boilerplate with Sneat Admin Dashboard and some packages such as auth, permission and users management.
 </p>
 
 ## Main Template
@@ -60,7 +60,7 @@ If you want to check the original template in HTML5 and Bootstrap, [click here](
     password: password
 
 ## Requirements
-- Laravel (10.48.7)
+- Laravel (10.48.10)
 - PHP (8.2.10)
 - MySQL (8.0.30)
 - Composer (2.7.1)
@@ -75,6 +75,3 @@ If you want to check the original template in HTML5 and Bootstrap, [click here](
 ## Contributing
 
 Feel free to contribute and make a pull request.
-
-## Project status
-- Ongoing

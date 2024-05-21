@@ -838,14 +838,8 @@
         @if (Route::has('login'))
             <div class="z-10 p-6 text-right sm:fixed sm:top-0 sm:right-0">
                 @auth
-                    @role('Administrator')
-                        <a href="{{ route('admin.home') }}"
-                            class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Home</a>
-                    @endrole
-                    @role('Member')
-                        <a href="{{ route('member.home') }}"
-                            class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Home</a>
-                    @endrole
+                    <a href="{{ route('home.index') }}"
+                        class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Home</a>
                 @else
                     <a href="{{ route('login') }}"
                         class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>

@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,20 +18,18 @@ Route::get('/', function () {
     return view('frontend.welcome');
 })->name('/');
 
-Route::group(['prefix' => 'home', 'middleware' => ['auth', 'verified'], 'as' => 'home.'], function () {
-    Route::get('/', [\App\Http\Controllers\Member\Home\HomeController::class, 'index'])->name('index');
+Route::group(['middleware' => ['auth', 'verified']], function () {
+
+    // Home
+    Route::group(['prefix' => 'home', 'as' => 'home.'], function () {
+        Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('index');
+    });
+
+    Route::group(['middleware' => ['role:Administrator']], function () {
+        Route::group(['prefix' => 'users',  'as' => 'users.'], function () {
+            Route::resource('/', \App\Http\Controllers\UserController::class);
+        });
+    });
 });
-
-// Admin
-Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'verified', 'role:Administrator'], 'as' => 'admin.'], function () {
-    Route::get('users', [\App\Http\Controllers\Admin\User\UserController::class, 'index'])->name('users');
-});
-
-
-
-
-
-
-
 
 require __DIR__ . '/auth.php';

@@ -21,25 +21,44 @@
         <li class="menu-item {{ request()->is('home') ? 'active' : '' }}">
             <a href="{{ route('home.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="Home">Home</div>
+                <div data-i18n="Beranda">Beranda</div>
             </a>
         </li>
 
         @role('Administrator')
             <li class="menu-header small text-uppercase">
-                <span class="menu-header-text">User Management</span>
+                <span class="menu-header-text">Users Management</span>
             </li>
 
-            <li class="menu-item {{ request()->is('admin/users') ? 'open' : '' }}">
+            <li class="menu-item {{ request()->is('users') ? 'open' : '' }}">
                 <a href="javascript:void(0);" class="menu-link menu-toggle">
                     <i class="menu-icon tf-icons bx bx-layout"></i>
-                    <div data-i18n="User management">User Management</div>
+                    <div data-i18n="Kelola Pengguna">Kelola Pengguna</div>
                 </a>
 
                 <ul class="menu-sub">
-                    <li class="menu-item {{ request()->is('admin/users') ? 'active' : '' }}">
-                        <a href="{{ route('admin.users') }}" class="menu-link">
-                            <div data-i18n="user lists">user lists</div>
+                    <li class="menu-item {{ request()->is('users') ? 'active' : '' }}">
+                        <a href="{{ route('users.index') }}" class="menu-link">
+                            <div data-i18n="Pengguna">Pengguna</div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="menu-header small text-uppercase">
+                <span class="menu-header-text">System Management</span>
+            </li>
+
+            <li class="menu-item {{ request()->is('users') ? 'open' : '' }}">
+                <a href="javascript:void(0);" class="menu-link menu-toggle">
+                    <i class="menu-icon tf-icons bx bx-layout"></i>
+                    <div data-i18n="Pengaturan Sistem">Pengaturan Sistem</div>
+                </a>
+
+                <ul class="menu-sub">
+                    <li class="menu-item">
+                        <a href="" class="menu-link">
+                            <div data-i18n="Pengaturan">Pengaturan</div>
                         </a>
                     </li>
                 </ul>

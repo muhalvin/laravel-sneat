@@ -5,11 +5,15 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
+use Exception;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Validation\Rule;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 
@@ -30,23 +34,40 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        ]);
+        DB::beginTransaction();
 
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
-        $user->assignRole('Member');
+        try {
+            $request->validate([
+                'username' => ['required', 'string', 'max:255', Rule::unique('users', 'username')],
+                'name' => ['required', 'string', 'max:255'],
+                'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users', 'email')],
+                'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            ]);
 
-        event(new Registered($user));
+            $user = User::create([
+                'name' => $request->name,
+                'username' => $request->username,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+            ]);
 
-        Auth::login($user);
+            $user->assignRole('Member');
 
-        return redirect(RouteServiceProvider::HOME);
+            event(new Registered($user));
+
+            DB::commit();
+
+            Auth::login($user);
+
+            return redirect(RouteServiceProvider::HOME);
+        } catch (Exception $e) {
+            DB::rollBack();
+
+            Log::error('An error occurred while creating account.');
+            Log::error('Message: ' . $e->getMessage());
+
+            toastr()->addError('An error occurred while creating account. Please try again.');
+            return redirect()->route('login');
+        }
     }
 }

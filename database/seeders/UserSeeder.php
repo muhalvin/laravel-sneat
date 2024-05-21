@@ -17,10 +17,11 @@ class UserSeeder extends Seeder
         DB::transaction(function () {
             try {
                 $admin = User::create([
-                    'name'              => 'Admin',
-                    'email'             => 'admin@gmail.com',
+                    'name'              => 'Administrator',
+                    'username'          => 'administrator',
+                    'email'             => 'administrator@gmail.com',
                     'email_verified_at' => now(),
-                    'password'          => Hash::make('password'),
+                    'password'          => Hash::make('administrator'),
                 ]);
                 $admin->assignRole('Administrator');
             } catch (\Throwable $e) {

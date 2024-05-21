@@ -1,28 +1,19 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Home;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Models\User;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Cache;
 
-class HomeController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): View
     {
-        $admin = Cache::remember('admin:admin-role-count', 7200, function () {
-            return User::role('Administrator')->count();
-        });
-
-        $users = Cache::remember('admin:user-role-count', 7200, function () {
-            return User::role('Member')->count();
-        });
-
-        return view('contents.backend.admin.home.main', compact('admin', 'users'));
+        return view('backend.user.main');
     }
 
     /**
@@ -44,7 +35,7 @@ class HomeController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(User $user)
     {
         //
     }
@@ -52,7 +43,7 @@ class HomeController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(User $user)
     {
         //
     }
@@ -60,7 +51,7 @@ class HomeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, User $user)
     {
         //
     }
@@ -68,7 +59,7 @@ class HomeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(User $user)
     {
         //
     }
